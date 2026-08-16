@@ -1,20 +1,10 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-// ← pages frontend (publiques)
-import AccueilPublic from './frontend/pg/Accueil'
-
-import Detailp from './frontend/pg/Detail-portrait'
-
-// ← pages backend (protégées)
-import ListeEvent from './backend/Event'
-
-
-
 
 import Accueil_av from './frontend/pg/Accueil'
 import YearTimeline from './frontend/pg/Timeline'
-import Detail_event from './frontend/pg/Detail-event'
-import Detail_portrait from './frontend/pg/Detail-portrait'
+import Detail_event from './frontend/pg/DetailEvent'
+import Detail_portrait from './frontend/pg/DetailPortrait'
 
 function App() {
   return (

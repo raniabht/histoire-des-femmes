@@ -1,14 +1,13 @@
 import React, { useRef, useEffect, useState } from "react";
 import { Link } from 'react-router-dom'
-import Cart from "../cart"
 import Nav from "../section/Nav"
 import Footer from "../section/Footer"
-import Cart_portrait from "../detail/Cart_portrait"
-import Cart_event from "../detail/Cart-event"
+import Cart_portrait from "../detail/CartPortrait"
+import Cart_event from "../detail/CartEvent"
 import Form from "../section/Form"
 import { getEvenements } from "../../backend/Event"
 import { getPortraits } from "../../backend/Portrait"
-import { Date_affichage, Annee_affichage } from "../detail/Date_timeline"
+import { Date_affichage, Annee_affichage } from "../detail/DateTimeline"
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";

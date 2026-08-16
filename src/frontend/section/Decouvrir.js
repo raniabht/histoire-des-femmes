@@ -1,5 +1,5 @@
-import Cart_event from "../detail/Cart-event"
-import Cart_portrait from "../detail/Cart_portrait"
+import Cart_event from "../detail/CartEvent"
+import Cart_portrait from "../detail/CartPortrait"
 
 function Decouvrir({ articles = [] }) {
 

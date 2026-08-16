@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Date_affichage } from "./Date_timeline"
+import { Date_affichage } from "./DateTimeline"
 
  {/* section Evènement */}
  function Cart_portrait({ height, width, img, txt, rawId, image, prenom, nom, naissance, nationalite, metiers }) {

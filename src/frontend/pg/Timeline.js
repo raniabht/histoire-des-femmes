@@ -7,7 +7,7 @@ import "vis-timeline/styles/vis-timeline-graph2d.min.css";
 import { DataSet } from "vis-data";
 import { getEvenements } from "../../backend/Event";
 import { getPortraits } from "../../backend/Portrait";
-import { Cart } from "../detail/Cart_timeline";
+import { Cart } from "../detail/CartTimeline";
 import "./Style.css";
 import Menu from "../section/menu";
 

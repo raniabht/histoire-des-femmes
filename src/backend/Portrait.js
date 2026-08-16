@@ -1,4 +1,4 @@
-import { DateACF } from "../frontend/detail/Date_timeline";
+import { DateACF } from "../frontend/detail/DateTimeline";
 import { ApiPortraits as ApiPortraits, ApiPortrait_ID, Media_ID } from "./Api";
 
 function getImage(item) {

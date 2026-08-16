@@ -6,7 +6,7 @@ import Decouvrir from "../section/Decouvrir";
 import Footer from "../section/Footer";
 import { getPortrait_ID } from "../../backend/Portrait";
 import { getArticlesLies } from "../../backend/Related";
-import { Date_affichage } from "../detail/Date_timeline";
+import { Date_affichage } from "../detail/DateTimeline";
 
 
 import { gsap } from "gsap";

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-import { Date_affichage } from "./Date_timeline"
-import { Annee_affichage } from "./Date_timeline"
+import { Date_affichage } from "./DateTimeline"
+import { Annee_affichage } from "./DateTimeline"
 
 function Cart_event({ height, rawId, image, title, start, end, margin }) {
     return (

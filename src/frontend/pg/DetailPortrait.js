@@ -4,22 +4,22 @@ import { useParams } from "react-router-dom";
 import Nav from "../section/Nav";
 import Decouvrir from "../section/Decouvrir";
 import Footer from "../section/Footer";
-import { getPortrait_ID } from "../../backend/Portrait";
+import { getPortraitID } from "../../backend/Portrait";
 import { getArticlesLies } from "../../backend/Related";
-import { Date_affichage } from "../detail/DateTimeline";
+import { DateAffichage } from "../detail/DateTimeline";
 
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-function Detail_portrait() {
+function DetailPortrait() {
   const { id } = useParams();
   const [portrait, setPortrait] = useState(null);
   const [articlesLies, setArticlesLies] = useState([]);
 
   useEffect(() => {
-    getPortrait_ID(id)
+    getPortraitID(id)
       .then((data) => {
         setPortrait(data);
         return getArticlesLies(data.evenementsLies, data.portraitsLies);
@@ -47,7 +47,7 @@ useEffect(() => {
       endTrigger: parent.current,
       end: "bottom 100%",
       pin: txt.current,
-      markers: true,
+      // markers: true,
     });
   }, txt);
 
@@ -90,10 +90,10 @@ useEffect(() => {
         <div>
           <div className="flex justify-between">
             <p className="text-txt font-merri font-normal">
-              Naissance: {Date_affichage(portrait.naissance)}
+              Naissance: {DateAffichage(portrait.naissance)}
             </p>
             <p className="text-txt font-merri font-normal">
-              Mort: {portrait.deces ? Date_affichage(portrait.deces) : ""}
+              Mort: {portrait.deces ? DateAffichage(portrait.deces) : ""}
             </p>
             <p className="text-txt font-merri font-normal">
               Nationalité: {portrait.nationalite}
@@ -155,4 +155,4 @@ useEffect(() => {
   );
 }
 
-export default Detail_portrait;
+export default DetailPortrait;

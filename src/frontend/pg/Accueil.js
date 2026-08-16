@@ -2,19 +2,19 @@ import React, { useRef, useEffect, useState } from "react";
 import { Link } from 'react-router-dom'
 import Nav from "../section/Nav"
 import Footer from "../section/Footer"
-import Cart_portrait from "../detail/CartPortrait"
-import Cart_event from "../detail/CartEvent"
+import CartPortrait from "../detail/CartPortrait"
+import CartEvent from "../detail/CartEvent"
 import Form from "../section/Form"
 import { getEvenements } from "../../backend/Event"
 import { getPortraits } from "../../backend/Portrait"
-import { Date_affichage, Annee_affichage } from "../detail/DateTimeline"
+import { DateAffichage, AnneeAffichage } from "../detail/DateTimeline"
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function Accueil_av() {
+function Accueil() {
   const [dernierArticle, setDernierArticle] = useState(null)
   const [portraitsALaUne, setPortraitsALaUne] = useState([])
   const [evenementsALaUne, setEvenementsALaUne] = useState([]);
@@ -66,7 +66,7 @@ function Accueil_av() {
 
   // Période à afficher (début - fin, ou naissance - décès)
   const periodeDernierArticle = dernierArticle
-  ? `${Annee_affichage(dernierArticle.start)}${dernierArticle.end ? " - " + Annee_affichage(dernierArticle.end) : ""}`
+  ? `${AnneeAffichage(dernierArticle.start)}${dernierArticle.end ? " - " + AnneeAffichage(dernierArticle.end) : ""}`
   : ""
 
 
@@ -188,7 +188,7 @@ function Accueil_av() {
     {/* portrait a la une sur wordpress */}
     <section className="bg-sombre h-[85vh] w-auto p-5 flex gap-3">
       {portraitsALaUne.map((p) => (
-        <Cart_portrait
+        <CartPortrait
           key={p.rawId}
           height="100%"
           width="400px"
@@ -224,7 +224,7 @@ function Accueil_av() {
       {/* event a la une : défile normalement avec la page, aucune ref ni animation dessus */}
       <div className="w-1/3 flex flex-col items-end gap-6 border-l-2 border-sombre pt-10 pl-[5%]">
         {evenementsALaUne.map((event) => (
-    <Cart_event
+    <CartEvent
       key={event.rawId}
       height="450px"
       rawId={event.rawId}
@@ -260,4 +260,4 @@ function Accueil_av() {
   )
 }
 
-export default Accueil_av
+export default Accueil

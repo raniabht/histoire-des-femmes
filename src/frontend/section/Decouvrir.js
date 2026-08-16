@@ -1,5 +1,5 @@
-import Cart_event from "../detail/CartEvent"
-import Cart_portrait from "../detail/CartPortrait"
+import CartEvent from "../detail/CartEvent"
+import CartPortrait from "../detail/CartPortrait"
 
 function Decouvrir({ articles = [] }) {
 
@@ -29,7 +29,7 @@ function Decouvrir({ articles = [] }) {
             <div>
               <div className="mt-5 h-[85vh] p-5 px-gx flex gap-3 bg-sombre">
                 {portraitsLies.map((p) => (
-                  <Cart_portrait
+                  <CartPortrait
                     key={`portrait-${p.rawId}`}
                     height="100%"
                     width="400px"
@@ -60,7 +60,7 @@ function Decouvrir({ articles = [] }) {
             {/*groupe  cart */}
             <div className="mt-5 grid grid-cols-[repeat(auto-fill,450px)] justify-center p-5 gap-3">
               {evenementsLies.map((e) => (
-                <Cart_event
+                <CartEvent
                   key={`event-${e.rawId}`}
                   height="500px"
                   rawId={e.rawId}

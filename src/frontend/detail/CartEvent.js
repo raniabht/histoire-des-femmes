@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
-import { Date_affichage } from "./DateTimeline"
-import { Annee_affichage } from "./DateTimeline"
+import { DateAffichage } from "./DateTimeline"
+import { AnneeAffichage } from "./DateTimeline"
 
-function Cart_event({ height, rawId, image, title, start, end, margin }) {
+function CartEvent({ height, rawId, image, title, start, end, margin }) {
     return (
         <>
          {/* cart */}
@@ -18,7 +18,7 @@ function Cart_event({ height, rawId, image, title, start, end, margin }) {
 
                     <hr className='bg-clair border-clair w-10 h-[4px] mt-1 hr'></hr>
                     <p className="font-gravitas text-ptt leading-none mt-[5px]">
-                         {Annee_affichage(start)}{end ? " - " + Annee_affichage(end) : ""}
+                         {AnneeAffichage(start)}{end ? " - " + AnneeAffichage(end) : ""}
                     </p>
                 </div>
                 </div>
@@ -36,4 +36,4 @@ function Cart_event({ height, rawId, image, title, start, end, margin }) {
     )
 }
 
-export default Cart_event
+export default CartEvent

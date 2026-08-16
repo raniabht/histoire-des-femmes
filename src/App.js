@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 
-import Accueil_av from './frontend/pg/Accueil'
+import Accueil from './frontend/pg/Accueil'
 import YearTimeline from './frontend/pg/Timeline'
-import Detail_event from './frontend/pg/DetailEvent'
-import Detail_portrait from './frontend/pg/DetailPortrait'
+import DetailEvent from './frontend/pg/DetailEvent'
+import DetailPortrait from './frontend/pg/DetailPortrait'
 
 function App() {
   return (
@@ -12,14 +12,14 @@ function App() {
       <Routes>
 
         {/* Page publique — visible par tous les visiteurs */}
-        <Route path="/" element={<Accueil_av/>} />
+        <Route path="/" element={<Accueil/>} />
         {/* <Route path="/" element={<Tl/>} /> */}
         
 
 
         <Route path="/articles" element={<YearTimeline />} />
-        <Route path="/evenement/:id" element={<Detail_event />} />
-        <Route path="/portrait/:id" element={<Detail_portrait />} />
+        <Route path="/evenement/:id" element={<DetailEvent />} />
+        <Route path="/portrait/:id" element={<DetailPortrait />} />
 
 
 

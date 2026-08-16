@@ -1,5 +1,5 @@
-import { getEvenement_ID } from "./Event";
-import { getPortrait_ID } from "./Portrait";
+import { getEvenementID } from "./Event";
+import { getPortraitID } from "./Portrait";
 
 /**
  * Récupère les articles liés MANUELLEMENT (champs Relationship ACF),
@@ -12,8 +12,8 @@ export async function getArticlesLies(evenementsLiesIds = [], portraitsLiesIds =
   if (evenementsLiesIds.length === 0 && portraitsLiesIds.length === 0) return [];
 
   const [evenementsComplets, portraitsComplets] = await Promise.all([
-    Promise.all(evenementsLiesIds.map((id) => getEvenement_ID(id))),
-    Promise.all(portraitsLiesIds.map((id) => getPortrait_ID(id))),
+    Promise.all(evenementsLiesIds.map((id) => getEvenementID(id))),
+    Promise.all(portraitsLiesIds.map((id) => getPortraitID(id))),
   ]);
 
   // On ajoute un champ "them" pour que le composant Decouvrir sache

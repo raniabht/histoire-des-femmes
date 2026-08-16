@@ -5,22 +5,22 @@ import { useParams } from "react-router-dom";
 import Nav from "../section/Nav";
 import Decouvrir from "../section/Decouvrir";
 import Footer from "../section/Footer";
-import { getEvenement_ID } from "../../backend/Event";
+import { getEvenementID } from "../../backend/Event";
 import { getArticlesLies } from "../../backend/Related";
-import { Annee_affichage, Date_affichage } from "../detail/DateTimeline";
+import { AnneeAffichage, Date_affichage } from "../detail/DateTimeline";
 import "./Style.css";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-function Detail_event() {
+function DetailEvent() {
   const { id } = useParams();
   const [evenement, setEvenement] = useState(null);
   const [articlesLies, setArticlesLies] = useState([]);
 
   useEffect(() => {
-    getEvenement_ID(id)
+    getEvenementID(id)
       .then((data) => {
         setEvenement(data);
         return getArticlesLies(data.evenementsLies, data.portraitsLies);
@@ -119,8 +119,8 @@ if (!evenement) return null;
             {evenement.title}
           </h1>
           <h2 className="text-titre text-sous font-gravitas m-0">
-            {Annee_affichage(evenement.debut)}
-            {evenement.fin ? ` - ${Annee_affichage(evenement.fin)}` : ""}
+            {AnneeAffichage(evenement.debut)}
+            {evenement.fin ? ` - ${AnneeAffichage(evenement.fin)}` : ""}
           </h2>
         </div>
         <hr className="bg-sombre border-sombre h-[4px] mt-1"></hr>
@@ -197,4 +197,4 @@ if (!evenement) return null;
   );
 }
 
-export default Detail_event;
+export default DetailEvent;

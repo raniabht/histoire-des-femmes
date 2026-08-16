@@ -1,5 +1,5 @@
 import { DateACF } from "../frontend/detail/DateTimeline";
-import { ApiPortraits as ApiPortraits, ApiPortrait_ID, Media_ID } from "./Api";
+import { ApiPortraits as ApiPortraits, ApiPortraitID, MediaID } from "./Api";
 
 function getImage(item) {
   return item._embedded?.["wp:featuredmedia"]?.[0]?.source_url || null;
@@ -35,8 +35,8 @@ export async function getPortraits() {
 /**
  * Récupère UN SEUL portrait par son ID, formaté pour la page détail
  */
-export async function getPortrait_ID(id) {
-  const p = await ApiPortrait_ID(id);
+export async function getPortraitID(id) {
+  const p = await ApiPortraitID(id);
 
   const sources = [1, 2, 3, 4, 5]
     .map((n) => ({
@@ -53,7 +53,7 @@ export async function getPortrait_ID(id) {
   }
 
   // image_1 est un ID d'attachment (pas une URL) — il faut le résoudre séparément
-  const image1 = p.acf.image_1 ? await Media_ID(p.acf.image_1) : null;
+  const image1 = p.acf.image_1 ? await MediaID (p.acf.image_1) : null;
 
   return {
     id: p.id,

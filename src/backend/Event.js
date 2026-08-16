@@ -1,5 +1,5 @@
 import { DateACF } from "../frontend/detail/DateTimeline";
-import { ApiEvenements as ApiEvenements, ApiEvenement_ID } from "./Api";
+import { ApiEvenements as ApiEvenements, ApiEvenementID } from "./Api";
 
 
 function getImage(item) {
@@ -32,8 +32,8 @@ export async function getEvenements() {
 /**
  * Récupère UN SEUL événement par son ID, formaté pour la page détail
  */
-export async function getEvenement_ID(id) {
-  const evt = await ApiEvenement_ID(id);
+export async function getEvenementID(id) {
+  const evt = await ApiEvenementID(id);
 
   // Récupère les 5 sources non vides
   const sources = [1, 2, 3, 4, 5]

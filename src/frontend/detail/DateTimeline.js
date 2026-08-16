@@ -8,7 +8,7 @@ export function DateACF(dateStr) {
 }
 
 // Convertit une date ISO "YYYY-MM-DD" vers un format affichable "JJ/MM/AAAA"
-export function Date_affichage(dateISO) {
+export function DateAffichage(dateISO) {
   if (!dateISO) return "";
   const [annee, mois, jour] = dateISO.split("-");
   return `${jour}/${mois}/${annee}`;
@@ -16,7 +16,7 @@ export function Date_affichage(dateISO) {
 
 
 // Extrait uniquement l'année depuis une date ISO "YYYY-MM-DD"
-export function Annee_affichage(dateISO) {
+export function AnneeAffichage(dateISO) {
   if (!dateISO) return "";
   return dateISO.split("-")[0];
 }

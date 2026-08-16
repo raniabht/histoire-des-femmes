@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
-import { Date_affichage } from "./DateTimeline"
+import { DateAffichage } from "./DateTimeline"
 
  {/* section Evènement */}
- function Cart_portrait({ height, width, img, txt, rawId, image, prenom, nom, naissance, nationalite, metiers }) {
+ function CartPortrait({ height, width, img, txt, rawId, image, prenom, nom, naissance, nationalite, metiers }) {
     return(
         <>
 
@@ -25,7 +25,7 @@ import { Date_affichage } from "./DateTimeline"
 
             {/* liste d'info  */}
             <div className="flex justify-between mb-[4px]">
-                <p className="text-clair text-[14px] font-merri font-normal">{Date_affichage(naissance)}</p>
+                <p className="text-clair text-[14px] font-merri font-normal">{DateAffichage(naissance)}</p>
                 <p className="text-clair text-[14px] font-merri font-normal">{nationalite}</p>
                 <p className="text-clair text-[14px] font-merri font-normal">{metiers}</p>
             </div>
@@ -36,4 +36,4 @@ import { Date_affichage } from "./DateTimeline"
     )
  }
 
- export default Cart_portrait
+ export default CartPortrait

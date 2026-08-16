@@ -13,21 +13,21 @@ export async function ApiPortraits() {
 }
 
 // recup id event
-export async function ApiEvenement_ID(id) {
+export async function ApiEvenementID(id) {
   const res = await fetch(`${URL}/evenements/${id}?_embed`);
   if (!res.ok) throw new Error(`Erreur événement ${id} : ${res.status}`);
   return res.json();
 }
 
 // recup id portrait
-export async function ApiPortrait_ID(id) {
+export async function ApiPortraitID(id) {
   const res = await fetch(`${URL}/portraits/${id}?_embed`);
   if (!res.ok) throw new Error(`Erreur portrait ${id} : ${res.status}`);
   return res.json();
 }
 
 // recup video event
-export async function Media_ID(id) {
+export async function MediaID(id) {
   if (!id) return null;
   const res = await fetch(`${URL}/media/${id}`);
   if (!res.ok) throw new Error(`Erreur média ${id} : ${res.status}`);

@@ -7,7 +7,7 @@ import Decouvrir from "../section/Decouvrir";
 import Footer from "../section/Footer";
 import { getEvenementID } from "../../backend/Event";
 import { getArticlesLies } from "../../backend/Related";
-import { AnneeAffichage, Date_affichage } from "../detail/DateTimeline";
+import { AnneeAffichage, DateAffichage } from "../detail/DateTimeline";
 import "./Style.css";
 
 import { gsap } from "gsap";

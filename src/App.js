@@ -1,6 +1,4 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-
-
 import Accueil from './frontend/pg/Accueil'
 import YearTimeline from './frontend/pg/Timeline'
 import DetailEvent from './frontend/pg/DetailEvent'

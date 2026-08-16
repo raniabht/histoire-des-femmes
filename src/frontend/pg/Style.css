@@ -1,0 +1,179 @@
+/* txt event */
+/* Scrollbar custom */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 0.5rem; /* équivalent de w-2 */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #342B38; /* utilise ta couleur custom Tailwind */
+  border-radius: 9999px; /* équivalent de rounded-full */
+}
+
+/* Firefox */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #FF3D00 transparent;
+}
+
+
+
+
+/* ligne du temps */
+.vis-item {
+  box-shadow: none !important;
+  background: none !important;
+  padding: 0 !important;
+  border-left: solid 4px   #342B38 !important;
+  border-top: solid 4px   #342B38 !important;
+  border-right: none!important;
+  border-bottom: none !important;
+}
+
+/* Ligne de connexion : passe en noir */
+.vis-item.vis-line {
+  border: solid 0px !important;
+  border-left: solid 4px   #342B38 !important;
+
+}
+
+/* Supprime complètement le point/boule */
+.vis-item.vis-dot {
+  display: none !important;
+}
+
+.vis-item-content {
+  position: relative;
+  width: 300px;
+  background-color: #342B38;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+/* Le bloc texte : on remet le flex qui manquait */
+.vis-item-content div {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column-reverse; /* inverse l'ordre d'affichage */
+  justify-content: space-between; /* reste inchangé, fonctionne toujours */
+  padding: 0.5rem;
+  color: #F4F0E7;
+  transition: color 0.3s ease;
+  font-family: 'Gravitas One', sans-serif;
+}
+
+.vis-item-content a:hover div {
+  color: #FF3D00;
+
+}
+
+.vis-item-content p {
+  font-family: 'Gravitas One', sans-serif;
+  font-size: 20px;
+  text-decoration: underline;
+  margin: 0;
+  align-self: flex-start; /* force la période à rester alignée à gauche */
+}
+
+.vis-item-content h3 {
+  font-family: 'Gravitas One', sans-serif;
+  font-size: 28px;
+  margin: 0;
+  text-align: right;
+  text-wrap: balance;
+  line-height: 1;
+  align-self: flex-end; /* force le titre à rester aligné à droite */
+}
+
+.vis-item-content img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+
+/* css portrait */
+
+.vis-item-content div:nth-child(2){
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #342B38;
+  z-index: 1;
+}
+
+
+.vis-item-content div img.custom-card-bg {
+  position: absolute;
+  z-index: 1;
+  top: 8px;
+  right: 8px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+
+
+
+
+
+/* LIGNE DU TEMP */
+
+
+.vis-time-axis .vis-foreground {
+   border-top: solid 4px   #342B38 !important;
+}
+
+
+
+.vis-panel.vis-bottom {
+  border-top: 4px solid #000000 ;
+  border-bottom: 0px solid #000000 !important;
+}
+
+
+.vis-time-axis .vis-grid.vis-minor{
+  border-left:solid 1px #342B38;
+  opacity: 50%;
+}
+
+
+
+.vis-panel.vis-bottom .vis-text.vis-minor{
+  font-family: 'Gravitas One', sans-serif !important;
+  color:#342B38 !important; /* remplace par ta couleur exacte */
+  font-size: 16px !important;
+}
+/* Le label de date automatique en bas de l'axe (ex: "1898") */
+.vis-panel.vis-bottom .vis-text.vis-major{
+ display: none;
+}
+
+
+
+
+
+
+
+
+/* tst */
+
+.h-full.w-full{
+  overflow-y: hidden;
+}
+
+

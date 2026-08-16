@@ -1,39 +1,158 @@
 {
+  
   "name": "tfe",
+  
   "version": "0.1.0",
+  
   "private": true,
+  
+  "proxy": "http://localhost/tfe2-cms",
+  
   "dependencies": {
-    "@testing-library/dom": "^10.4.1",
-    "@testing-library/jest-dom": "^6.9.1",
-    "@testing-library/react": "^16.3.2",
-    "@testing-library/user-event": "^13.5.0",
-    "react": "^19.2.5",
-    "react-dom": "^19.2.5",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+  
+    
+  "@fontsource/gravitas-one": "^5.3.0",
+  
+    
+  "@fontsource/merriweather-sans": "^5.3.0",
+  
+    
+  "@gsap/react": "^2.1.2",
+  
+    
+  "@testing-library/dom": "^10.4.1",
+  
+    
+  "@testing-library/jest-dom": "^6.9.1",
+  
+    
+  "@testing-library/react": "^13.4.0",
+  
+    
+  "@testing-library/user-event": "^13.5.0",
+  
+    
+  "ajv": "^8.20.0",
+  
+    
+  "d3": "^7.9.0",
+  
+    
+  "gsap": "^3.15.0",
+  
+    
+  "react": "^18.3.1",
+  
+    
+  "react-dom": "^18.3.1",
+  
+    
+  "react-router-dom": "^7.14.2",
+  
+    
+  "react-scripts": "^5.0.1",
+  
+    
+  "styled-components": "^5.3.11",
+  
+    
+  "vis-data": "^8.0.4",
+  
+    
+  "vis-timeline": "^8.5.1",
+  
+    
+  "web-vitals": "^2.1.4"
+  
   },
+  
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  
+    
+  "start": "react-scripts start",
+  
+    
+  "build": "react-scripts build",
+  
+    
+  "test": "react-scripts test"
+  
   },
+  
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  
+    
+  "extends": [
+  
+    
+    
+  "react-app",
+  
+    
+    
+  "react-app/jest"
+  
+    
+  ]
+  
   },
+  
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  
+    
+  "production": [
+  
+    
+    
+  ">0.2%",
+  
+    
+    
+  "not dead",
+  
+    
+    
+  "not op_mini all"
+  
+    
+  ],
+  
+    
+  "development": [
+  
+    
+    
+  "last 1 chrome version",
+  
+    
+    
+  "last 1 firefox version",
+  
+    
+    
+  "last 1 safari version"
+  
+    
+  ]
+  
+  },
+  
+  "devDependencies": {
+  
+    
+  "@vitejs/plugin-react": "^4.7.0",
+  
+    
+  "autoprefixer": "^10.5.0",
+  
+    
+  "postcss": "^8.5.14",
+  
+    
+  "tailwindcss": "^3.4.19",
+  
+    
+  "vite": "^6.4.2"
+  
   }
 }

@@ -7,7 +7,7 @@ import DetailPortrait from './frontend/pg/DetailPortrait'
 function App() {
   return (
     // point le sous dossier ou se touve mon code
-    <BrowserRouter  basename="/histoire-des-femmes">
+    <BrowserRouter>
       <Routes>
 
         {/* Page publique — visible par tous les visiteurs */}

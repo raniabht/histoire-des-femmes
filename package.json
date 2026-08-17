@@ -5,8 +5,6 @@
   
   "version": "0.1.0",
   
-  "homepage": "/histoire-des-femmes",
-  
   "private": true,
   
   "proxy": "http://localhost/tfe2-cms",

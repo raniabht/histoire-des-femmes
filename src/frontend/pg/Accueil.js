@@ -7,7 +7,7 @@ import CartEvent from "../detail/CartEvent"
 import Form from "../section/Form"
 import { getEvenements } from "../../backend/Event"
 import { getPortraits } from "../../backend/Portrait"
-import { DateAffichage, AnneeAffichage } from "../detail/DateTimeline"
+import { AnneeAffichage } from "../detail/DateTimeline"
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";

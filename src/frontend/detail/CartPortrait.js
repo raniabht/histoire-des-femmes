@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { DateAffichage } from "./DateTimeline"
 
- {/* section Evènement */}
+// section Evènement
  function CartPortrait({ height, width, img, txt, rawId, image, prenom, nom, naissance, nationalite, metiers }) {
     return(
         <>
@@ -23,7 +23,7 @@ import { DateAffichage } from "./DateTimeline"
                 {prenom} <br/> {nom}
             </h2>
 
-            {/* liste d'info  */}
+            /* liste d'info  */
             <div className="flex justify-between mb-[4px]">
                 <p className="text-clair text-[14px] font-merri font-normal">{DateAffichage(naissance)}</p>
                 <p className="text-clair text-[14px] font-merri font-normal">{nationalite}</p>

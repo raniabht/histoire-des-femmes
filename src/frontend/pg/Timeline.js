@@ -9,7 +9,6 @@ import { getEvenements } from "../../backend/Event";
 import { getPortraits } from "../../backend/Portrait";
 import { Cart } from "../detail/CartTimeline";
 import "./Style.css";
-import Menu from "../section/menu";
 
 export default function YearTimeline() {
   const containerRef = useRef(null);

@@ -1,8 +1,8 @@
 import { fetchCategories } from "./Api";
 
-/**
- * Récupère toutes les catégories créées dans WordPress,
- * formatées simplement pour l'affichage des boutons
+/*
+ récupère toutes les catégories créées dans WordPress,
+ formatées simplement pour l'affichage des boutons
  */
 export async function getCategories() {
   const categories = await fetchCategories();
@@ -14,9 +14,9 @@ export async function getCategories() {
   }));
 }
 
-/**
- * Filtre un tableau d'articles (events + portraits) selon une catégorie.
- * Si categorieId est vide/null, retourne tout sans filtrer.
+/*
+ filtre un tableau d'articles (events + portraits) selon une catégorie.
+ si categorieId est vide/null, retourne tout sans filtrer.
  */
 export function filtrerParCategorie(items, categorieId) {
   if (!categorieId) return items;

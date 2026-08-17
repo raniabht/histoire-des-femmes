@@ -1,4 +1,4 @@
-const URL = "http://localhost/cms-tfe/wp-json/wp/v2";
+const URL = "https://rania.techniques-graphiques.be/tfe/wp-json/wp/v2";
 
 export async function ApiEvenements() {
   const res = await fetch(`${URL}/evenements?per_page=100&_embed`);
@@ -28,6 +28,7 @@ export async function ApiPortraitID(id) {
 
 // recup video event
 export async function MediaID(id) {
+  // Si aucun ID n'est fourni, on retourne "null"
   if (!id) return null;
   const res = await fetch(`${URL}/media/${id}`);
   if (!res.ok) throw new Error(`Erreur média ${id} : ${res.status}`);

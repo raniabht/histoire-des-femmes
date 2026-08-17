@@ -5,8 +5,8 @@ function getImage(item) {
   return item._embedded?.["wp:featuredmedia"]?.[0]?.source_url || null;
 }
 
-/**
- * Récupère TOUS les portraits, formatés pour la timeline
+/*
+  récupère tout les portrait, formatés pour la timeline
  */
 export async function getPortraits() {
   const portraits = await ApiPortraits();
@@ -32,8 +32,8 @@ export async function getPortraits() {
     }));
 }
 
-/**
- * Récupère UN SEUL portrait par son ID, formaté pour la page détail
+/*
+ récupère un seul portrait par son id, formaté pour la page détail
  */
 export async function getPortraitID(id) {
   const p = await ApiPortraitID(id);
@@ -45,14 +45,14 @@ export async function getPortraitID(id) {
     }))
     .filter((s) => s.titre && s.lien);
 
-  // Le champ Relationship ACF peut retourner soit des IDs simples,
-  // soit des objets complets selon le "Return format" choisi dans ACF
+  // le champ Relationship ACF peut retourner soit des id simples,
+  // soit des objet complets choisi
   function Id(champ) {
     if (!champ) return [];
     return champ.map((item) => (typeof item === "object" ? item.ID || item.id : item));
   }
 
-  // image_1 est un ID d'attachment (pas une URL) — il faut le résoudre séparément
+  // image_1 est un id d'attachment 
   const image1 = p.acf.image_1 ? await MediaID (p.acf.image_1) : null;
 
   return {

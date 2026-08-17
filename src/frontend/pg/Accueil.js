@@ -30,7 +30,7 @@ function Accueil() {
 
         const Articles = [...evenements, ...portraits]
 
-        // Le dernier article publié sur WordPress (event OU portrait), toutes dates confondues
+        // le dernier article publié sur WordPress (event OU portrait), toutes dates confondues
         const dernier = Articles.reduce((plusRecent, item) => {
           if (!item.datePublication) return plusRecent
           if (!plusRecent) return item
@@ -50,34 +50,34 @@ function Accueil() {
     chargerDonnees()
   }, [])
 
-  // Lien de détail correct selon le type d'article
+  // lien de détail correct selon le type d'article
   const lienDernierArticle = dernierArticle
     ? dernierArticle.them === "event"
       ? `/evenement/${dernierArticle.rawId}`
       : `/portrait/${dernierArticle.rawId}`
     : "#"
 
-  // Titre à afficher : titre WordPress pour un event, prénom + nom pour un portrait
+  // titre à afficher : titre WordPress pour un event, prénom + nom pour un portrait
   const titreDernierArticle = dernierArticle
     ? dernierArticle.them === "event"
       ? dernierArticle.title
       : `${dernierArticle.prenom} ${dernierArticle.nom}`
     : ""
 
-  // Période à afficher (début - fin, ou naissance - décès)
+  // période à afficher (début - fin, ou naissance - décès)
   const periodeDernierArticle = dernierArticle
   ? `${AnneeAffichage(dernierArticle.start)}${dernierArticle.end ? " - " + AnneeAffichage(dernierArticle.end) : ""}`
   : ""
 
 
   // gsap //
-  // Référence du texte : c'est le SEUL élément concerné par l'animation
+
   const txt = useRef(null);
   const parent = useRef(null);
 
  useEffect(() => {
   if (!txt.current) return;
-  if (!parent.current) return; // si tu as bien une ref "parent" dans Accueil_av, sinon adapte
+  if (!parent.current) return; 
 
   const ctx = gsap.context(() => {
     ScrollTrigger.create({
@@ -137,7 +137,7 @@ function Accueil() {
         <hr className='bg-clair border-clair h-[4px] mt-1'></hr>
         </div>
 
-        {/* txt : l'EXTRAIT WordPress, pas le paragraphe complet */}
+        {/* txt: l'extrait wordpress*/}
         {dernierArticle && (
           <div
             className="mb-10 text-clair font-merri text-txt font-extralight"

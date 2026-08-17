@@ -35,7 +35,7 @@ function DetailEvent() {
 
 
   // gsap //
-// Références pour les éléments à animer
+// références pour les éléments à animer
 const textRef = useRef(null);
 
 // convertit une URL YouTube classique (watch?v=, youtu.be/, shorts/...) en URL "embed"
@@ -43,7 +43,7 @@ const textRef = useRef(null);
 function getYoutubeEmbedUrl(input) {
   if (!input) return null;
 
-  // Si WordPress a enregistré un lien au format Markdown [titre](url),
+  // si wordpress a enregistré un lien au format [titre](url),
   // on extrait uniquement l'URL entre parenthèses.
   const markdownMatch = input.match(/\(([^)]+)\)\s*$/);
   const rawUrl = markdownMatch ? markdownMatch[1] : input.trim();
@@ -77,7 +77,7 @@ function getYoutubeEmbedUrl(input) {
  // Animation GSAP
   useEffect(() => {
     if (!evenement) return; // on attend que les données soient chargées
-    if (evenement.video) return; // pas de texte animé à afficher si on montre la vidéo
+    if (evenement.video) return; // pas de texte si on montre la vidéo
 
     const textElement = textRef.current;
     if (!textElement) return;
@@ -102,7 +102,7 @@ function getYoutubeEmbedUrl(input) {
         }
       );
     }, textElement);
-    return () => ctx.revert(); // cleanup pour React / StrictMode
+    return () => ctx.revert(); // renisialise l'animation
   }, [evenement]); // dépend des données
 
 
@@ -126,7 +126,7 @@ if (!evenement) return null;
         <hr className="bg-sombre border-sombre h-[4px] mt-1"></hr>
       </header>
 
-      {/* SECTION intro (paragraphe_1 = contenu principal WordPress) */}
+      {/* SECTION intro */}
       <section className="px-gx pt-[2vh]">
         <div
           className="columns-2 gap-40 my-[50px] text-txt font-merri font-extralight mb-[2vh]"
@@ -134,10 +134,10 @@ if (!evenement) return null;
         />
       </section>
 
-      {/* SECTION paragraphe_2 + image, OU vidéo si WordPress en fournit une */}
+      {/* SECTION paragraphe_2 + image, OU vidéo */}
       <section className="relative mt-[50px] h-[90vh] w-full">
         {evenement.videoUrl ? (
-          // Lien YouTube → on convertit en URL "embed" et on affiche via iframe
+          // Lien YouTube → on convertit en URL "embed" et on affiche la video
           <iframe
             src={getYoutubeEmbedUrl(evenement.videoUrl)}
             title={evenement.title}

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import logo from "../../img/logo.svg"
+import logo from "../../img/Logo.svg"
 
 function Footer( { top }) {
   return (
@@ -7,8 +7,9 @@ function Footer( { top }) {
     <footer className="bg-sombre h-[21vh] px-[3%] mt-[30vh] flex flex-col items-center"
     style={{margin: top}}>
         <div className= 'w-1/12 h-[100%] pt-2 mx-9'>
-          <img src={logo} alt="Logo" className="w-full h-full object-contain clair" />
+          <img src={logo} alt="Logo" className="w-full h-full object-contain invert" />
         </div>
+      
 
 {/* nav */}
         <div className="flex justify-between w-full">

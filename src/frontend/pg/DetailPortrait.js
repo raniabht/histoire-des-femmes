@@ -7,8 +7,6 @@ import Footer from "../section/Footer";
 import { getPortraitID } from "../../backend/Portrait";
 import { getArticlesLies } from "../../backend/Related";
 import { DateAffichage } from "../detail/DateTimeline";
-
-
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -19,19 +17,22 @@ function DetailPortrait() {
   const [articlesLies, setArticlesLies] = useState([]);
 
   useEffect(() => {
-    getPortraitID(id)
-      .then((data) => {
-        setPortrait(data);
-        return getArticlesLies(data.evenementsLies, data.portraitsLies);
-      })
-      .then(setArticlesLies)
-      .catch((err) => console.error(err));
-  }, [id]);
+  // récup le portrait par id
+  getPortraitID(id)
+    .then((data) => {
+      // enregistre les données du portrait
+      setPortrait(data);
+      // récup les articles liés au portrait
+      return getArticlesLies(data.evenementsLies, data.portraitsLies);
+    })
+    .then(setArticlesLies) // Enregistre les articles liés
+    .catch((err) => console.error(err)); // Affiche l'erreur
+}, [id]); // Relance si l'ID change
 
 
 
 // gsap //
-// Références pour les éléments à animer
+// références pour les éléments à animer
 const txt = useRef(null);
 const parent = useRef(null);
 
@@ -52,7 +53,7 @@ useEffect(() => {
   }, txt);
 
   return () => ctx.revert();
-}, [portrait]); // ← se relance quand portrait passe de null à un objet, donc quand le JSX (et les refs) existent enfin
+}, [portrait]); // ← se relance quand portrait passe de null à un objet
 
 
 

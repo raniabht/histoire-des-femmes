@@ -49,7 +49,7 @@ function Decouvrir({ articles = [] }) {
           </div>
         )}
 
-        {/* Evènement */}
+        {/* Event */}
         {evenementsLies.length > 0 && (
           <div className="mt-[13vh] ">
             <hr className='bg-sombre border-sombre h-[4px] mt-1'></hr>

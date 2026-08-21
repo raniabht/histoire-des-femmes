@@ -39,7 +39,6 @@ function DetailEvent() {
 const textRef = useRef(null);
 
 // convertit une URL YouTube classique (watch?v=, youtu.be/, shorts/...) en URL "embed"
-// nécessaire car <iframe> a besoin du format /embed/ID pour intégrer le lecteur
 function getYoutubeEmbedUrl(input) {
   if (!input) return null;
 
@@ -97,7 +96,7 @@ function getYoutubeEmbedUrl(input) {
             start: "top 90%",
             end: "top 60%",
             scrub: true,
-            // markers: true, // à enlever en prod
+            // markers: true, 
           },
         }
       );

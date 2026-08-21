@@ -27,6 +27,7 @@ export function PortraitCart(item) {
 }
 
 export function Cart(item) {
+  // affiche cselon le type de contenue
   if (item.them === "event") return EventCart(item);
   if (item.them === "portrait") return PortraitCart(item);
   return "";

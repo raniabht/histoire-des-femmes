@@ -1,13 +1,13 @@
 import { DateACF } from "../frontend/detail/DateTimeline";
 import { ApiEvenements as ApiEvenements, ApiEvenementID } from "./Api";
 
-
+// si pas d'image contenu = vide
 function getImage(item) {
   return item._embedded?.["wp:featuredmedia"]?.[0]?.source_url || null;
 }
 
 /**
- * récupère tous les événements, formatés pour la timeline
+ * récupère tous les événements formatés pour la timeline
  */
 export async function getEvenements() {
   const evenements = await ApiEvenements();
@@ -30,7 +30,7 @@ export async function getEvenements() {
 }
 
 /**
- * récupère UN SEUL événement par son ID, formaté pour la page détail
+ * récupère un événement par son id formaté => détail
  */
 export async function getEvenementID(id) {
   const evt = await ApiEvenementID(id);
@@ -43,9 +43,7 @@ export async function getEvenementID(id) {
     }))
     .filter((s) => s.titre && s.lien);
 
-  // le champ Relationship ACF peut retourner soit des IDs simples,
-  // soit des objets complets selon le "Return format" choisi dans ACF 
-  // on gère les deux cas pour être sûr d'extraire un simple ID numérique
+  // le champ Relationship ACF peut retourner des id ou des objets complets 
   function Id(champ) {
     if (!champ) return [];
     return champ.map((item) => (typeof item === "object" ? item.ID || item.id : item));

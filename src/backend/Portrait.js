@@ -1,12 +1,13 @@
 import { DateACF } from "../frontend/detail/DateTimeline";
 import { ApiPortraits as ApiPortraits, ApiPortraitID, MediaID } from "./Api";
 
+// si pas d'image contenu = vide
 function getImage(item) {
   return item._embedded?.["wp:featuredmedia"]?.[0]?.source_url || null;
 }
 
 /*
-  récupère tout les portrait, formatés pour la timeline
+  récupère tout les portrait formatés pour la timeline
  */
 export async function getPortraits() {
   const portraits = await ApiPortraits();
@@ -33,7 +34,7 @@ export async function getPortraits() {
 }
 
 /*
- récupère un seul portrait par son id, formaté pour la page détail
+ récupère un seul portrait par son id formaté => détail
  */
 export async function getPortraitID(id) {
   const p = await ApiPortraitID(id);
@@ -45,8 +46,8 @@ export async function getPortraitID(id) {
     }))
     .filter((s) => s.titre && s.lien);
 
-  // le champ Relationship ACF peut retourner soit des id simples,
-  // soit des objet complets choisi
+  // le champ Relationship ACF peut retourner des id simples ou soit des objet complets
+
   function Id(champ) {
     if (!champ) return [];
     return champ.map((item) => (typeof item === "object" ? item.ID || item.id : item));
